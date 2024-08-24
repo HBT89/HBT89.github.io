@@ -1,0 +1,306 @@
+/* Color Palette */
+:root {
+    --slate-navy: #2A3E59;
+    --light-gray: #BBB;
+    --copper-gold: #c70;
+    --accent-blue: #3A66B2;
+    --accent-gold: #c91;
+    --text-color: #333;
+    --white: #EED;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--slate-navy);
+    color: var(--white);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Neon Green Visited Links */
+.neon-green a:visited {
+    color: #c70;
+    /* Neon Green */
+}
+
+/* Default link color */
+a {
+    color: var(--accent-blue);
+}
+
+/* Override for other text within cards */
+.section .content p,
+.section .content ul {
+    color: var(--text-color);
+    /* Default text color */
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: var(--slate-navy);
+    width: 30%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    background-color: var(--white);
+    color: var(--slate-navy);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Ensure the image is fully contained within the circle */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the image covers the entire area without distortion */
+    border-radius: 50%;
+    /* Make the image itself a circle */
+}
+
+.sidebar h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+/* Vertical Line Separator */
+.vertical-line {
+    width: 6px;
+    background-color: var(--copper-gold);
+    height: 80%;
+    align-self: center;
+    border-radius: 1px;
+}
+
+.main-content {
+    background-color: var(--slate-navy);
+    width: 70%;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+    /* Allow vertical scrolling if needed */
+    max-height: 100vh;
+    /* Restrict the height to the viewport */
+    ;
+}
+
+.section-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: 5px 0;
+    align-self: center;
+}
+
+.section {
+    background-color: var(--light-gray);
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--copper-gold);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.section.expanded {
+    height: auto;
+    /* Allow the height to adjust based on content */
+    max-height: 2000px;
+    /* Remove any height restriction */
+    overflow: visible;
+    /* Allow content to spill out when necessary */
+}
+
+
+.section h2 {
+    font-size: 28px;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.section .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.section.expanded .content {
+    max-height: 1000px;
+    /* Adjust this value as needed */
+}
+
+.image-title {
+    display: flex;
+    align-items: center;
+}
+
+.stock-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+
+
+/* Expand Button at Bottom */
+.expand-btn {
+    height: 10px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    background-color: var(--copper-gold);
+}
+
+.expand-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--white);
+    transition: transform 0.3s;
+}
+
+.section.expanded .expand-arrow {
+    transform: rotate(180deg);
+    /* Flips the arrow */
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    min-width: 400px;
+    max-width: 450px;
+    white-space: nowrap;
+}
+
+.title-wrapper h2 {
+    margin-left: 10px;
+    /* Add some spacing between image and title */
+    flex-shrink: 0;
+}
+
+/* Vertical Line in the Cards */
+.vertical-line {
+    width: 5px;
+    background-color: var(--accent-gold);
+    height: 80%;
+    /* Set an explicit height */
+    margin: 0 20px;
+}
+
+.vertical-line2 {
+    width: 2px;
+    background-color: var(--slate-navy);
+    height: 150px;
+    /* Set an explicit height */
+    margin: 0 20px;
+}
+
+/* Short Description Styling */
+.short-description {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+/* Snippet Cards Styling */
+.snippet-card {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--accent-blue);
+}
+
+.snippet-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.snippet-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.snippet-card p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.snippet-card a {
+    color: var(--accent-blue);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.snippet-card a:hover {
+    text-decoration: underline;
+}
+
+.snippet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.five-spacer {
+    min-height: 5px;
+    max-height: 5px;
+    width: 100%;
+}
+
+.ten-spacer {
+    min-height: 10px;
+    max-height: 10px;
+    width: 100%;
+}
