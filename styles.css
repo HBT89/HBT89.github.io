@@ -40,14 +40,14 @@ a {
     color: var(--text-color);
 }
 
-/* Container */
+
 .container {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
-/* Sidebar Styling */
+
 .sidebar {
     background-color: var(--slate-navy);
     width: 30%;
@@ -92,7 +92,7 @@ a {
     padding: 0 20px;
 }
 
-/* Vertical Line Separator */
+
 .vertical-line {
     width: 6px;
     background-color: var(--copper-gold);
@@ -101,7 +101,7 @@ a {
     border-radius: 1px;
 }
 
-/* Main Content Styling */
+
 .main-content {
     background-color: var(--slate-navy);
     width: 70%;
@@ -127,7 +127,7 @@ a {
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    margin-bottom: 10px; /* Add spacing between sections */
+    margin-bottom: 10px; 
 }
 
 .section-header {
@@ -244,4 +244,43 @@ a {
     min-height: 10px;
     max-height: 10px;
     width: 100%;
+}
+
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        order: 1; /* Place the sidebar at the top */
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+        order: 2; /* Ensure main content follows the sidebar */
+    }
+
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-title, .title-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stock-image {
+        margin-bottom: 10px;
+    }
+
+    .section .content {
+        max-height: none;
+        overflow: visible;
+    }
 }
