@@ -1,4 +1,4 @@
-/* Color Palette */
+d/* Color Palette */
 :root {
     --slate-navy: #2A3E59;
     --light-gray: #BBB;
@@ -248,7 +248,7 @@ a {
 
 
 /* Mobile Styling */
-@media (max-width: 1100px) {
+@media screen and (max-aspect-ration: 9/16) {
     .container {
         flex-direction: column;
     }
