@@ -304,4 +304,7 @@ a {
     height: 80px;
     margin: 0 auto 15px auto;
   }
+  .title-wrapper {
+    max-width: 500px;
+  }
 }
