@@ -45,7 +45,7 @@ a {
 
 .sidebar {
   background-color: var(--dark-concrete);
-  background-image: url(img/triangles.png);
+  background-image: url(/img/triangles.png);
   background-repeat: repeat;
   width: 30%;
   padding: 40px;
@@ -99,7 +99,7 @@ a {
 
 .main-content {
   background-color: var(--dark-concrete);
-  background-image: url(img/triangles.png);
+  background-image: url(/img/triangles.png);
   background-repeat: repeat;
   width: 70%;
   padding: 20px 60px;
