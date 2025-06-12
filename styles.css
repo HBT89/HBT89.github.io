@@ -1,409 +1,282 @@
-/* Color Palette */
+/* Updated Cyberpunk Theme Colors */
 :root {
-    --slate-navy: #2A3E59;
-    --light-gray: #BBB;
-    --copper-gold: #c70;
-    --accent-blue: #3A66B2;
-    --accent-gold: #c91;
-    --text-color: #333;
-    --white: #EED;
+  --asphalt-purple: #4B3869;
+  --digital-green: #66FF99;
+  --rusted-copper: #C96A23;
+  --dark-concrete: #1A1A1A;
+  --white: #EED;
+  --accent-blue: #3A66B2;
+  --text-color: #ccc;
 }
 
 /* Global Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: var(--slate-navy);
-    color: var(--white);
-    height: 100vh;
-    overflow: hidden;
+  font-family: 'Orbitron', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--dark-concrete);
+  color: var(--white);
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Neon Green Visited Links */
 .neon-green a:visited {
-    color: #c70;
+  color: var(--rusted-copper);
 }
 
-/* Default link color */
 a {
-    color: var(--accent-blue);
+  color: var(--digital-green);
 }
 
-/* Override for other text within cards */
 .section .content p,
 .section .content ul {
-    color: var(--text-color);
+  color: var(--text-color);
 }
-
 
 .container {
-    display: flex;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
-
 .sidebar {
-    background-color: var(--slate-navy);
-    width: 30%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--dark-concrete);
+  width: 30%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-picture {
-    background-color: var(--white);
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .sidebar h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: var(--white);
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--white);
 }
 
 .bio {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
-    color: var(--white);
-    padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--white);
+  padding: 0 20px;
 }
-
 
 .vertical-line {
-    width: 2px; /* Aligned with .vertical-line2 for consistency */
-    background-color: var(--copper-gold);
-    height: 80%;
-    align-self: center;
-    border-radius: 1px;
+  width: 2px;
+  background-color: var(--rusted-copper);
+  height: 80%;
+  align-self: center;
+  border-radius: 1px;
 }
-
 
 .main-content {
-    background-color: var(--slate-navy);
-    width: 70%;
-    padding: 20px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow-y: auto;
-    height: auto;
+  background-color: var(--dark-concrete);
+  width: 70%;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-y: auto;
+  height: auto;
 }
 
-/* Accordion Sections */
 .hidden-input {
-    display: none;
+  display: none;
 }
 
 .section {
-    background-color: var(--light-gray);
-    padding: 20px;
-    border: 1px solid var(--copper-gold);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    margin-bottom: 10px;
+  background-color: #222;
+  padding: 20px;
+  border: 1px solid var(--digital-green);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.section-header {
-    display: flex;
-    align-items: center;
+.section:hover {
+  border-color: var(--digital-green);
+  background: linear-gradient(to right, #1A1A1A, #333);
 }
 
 .section .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .hidden-input:checked+.section .content {
-    max-height: 500px;
-}
-
-.hidden-input:not(:checked)+.section .content {
-    max-height: 0;
-}
-
-.hidden-input:checked+.section {
-    background-color: var(--light-gray);
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 15px;
 }
 
 .title-wrapper {
-    display: flex;
-    align-items: center;
-    width: 33%;
-    min-width: 400px;
-    max-width: 450px;
-    white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 33%;
+  min-width: 400px;
+  max-width: 450px;
+  white-space: nowrap;
 }
 
 .title-wrapper h2 {
-    margin-left: 10px;
+  margin-left: 10px;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--digital-green);
 }
 
 .image-title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .stock-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .vertical-line2 {
-    width: 2px;
-    background-color: var(--slate-navy);
-    height: 150px;
-    margin: 0 20px;
+  width: 2px;
+  background-color: var(--asphalt-purple);
+  height: 150px;
+  margin: 0 20px;
 }
 
-/* Snippet Cards */
 .snippet-card {
-    display: flex;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    will-change: transform, box-shadow;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid var(--accent-blue);
+  display: flex;
+  background-color: #0f0f0f;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform, box-shadow;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--digital-green);
+  color: var(--text-color);
+  font-family: 'Space Mono', monospace;
 }
 
 .snippet-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
-    border-radius: 5px;
-}
-
-.snippet-card h3 {
-    margin: 0 0 10px 0;
-    color: var(--text-color);
-    font-size: 18px;
-}
-
-.snippet-card p {
-    margin: 0 0 10px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-.snippet-card a {
-    color: var(--accent-blue);
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.snippet-card a:hover {
-    text-decoration: underline;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px auto;
 }
 
 .snippet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(102, 255, 153, 0.3);
+}
+
+.snippet-card h3,
+.snippet-card p,
+.snippet-card a {
+  color: var(--text-color);
+}
+
+.snippet-card a:hover {
+  text-decoration: underline;
 }
 
 .spacer-small {
-    min-height: 5px;
-    max-height: 5px;
-    width: 100%;
+  min-height: 5px;
+  max-height: 5px;
+  width: 100%;
 }
 
 .spacer-medium {
-    min-height: 10px;
-    max-height: 10px;
-    width: 100%;
+  min-height: 10px;
+  max-height: 10px;
+  width: 100%;
 }
-/* Responsive styles for mobile devices */
-/* Mobile Styling */
+
 @media screen and (max-width: 768px) {
-@media screen and (max-width: 768px) {
+  body {
+    background-color: var(--dark-concrete);
+    color: var(--white);
+    overflow-y: auto;
+    height: auto;
+  }
 
+  .container {
+    flex-direction: column;
+  }
 
-    body {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        background-color: var(--slate-navy);
-        color: var(--white);
-        overflow-y: auto;
-        height: auto;
-    }
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
 
-    /* Container Styling */
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+  .main-content {
+    width: 100%;
+    padding: 20px;
+  }
 
-    /* Sidebar as Top Section */
-    .sidebar {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        background-color: var(--slate-navy);
-        margin-bottom: 20px;
-    }
+  .section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+  }
 
-    .profile-picture {
-        background-color: var(--white);
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
+  .section .content {
+    width: 100%;
+    text-align: center;
+  }
 
-    .profile-picture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+  .title-wrapper {
+    flex-direction: column;
+  }
 
-    .sidebar h1 {
-        font-size: 32px;
-        margin-bottom: 20px;
-        color: var(--white);
-    }
+  .stock-image {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
 
-    .bio {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: center;
-        color: var(--white);
-        padding: 0 20px;
-    }
+  .snippet-card {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
 
-    /* Main Content */
-    .main-content {
-        width: 100%;
-        padding: 20px;
-        overflow-y: auto;
-        position: relative;
-    }
-
-    /* Section Cards */
-    .section {
-        width: 100%;
-        min-height: 100vh;
-        /* Fill the screen height */
-        padding: 30px;
-        margin-bottom: 20px;
-        background-color: var(--light-gray);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Content of Each Section */
-    .section .content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Title Wrapper */
-    .title-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .title-wrapper h2 {
-        font-size: 24px;
-        margin-top: 10px;
-    }
-
-    /* Image Styling */
-    .stock-image {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-
-    /* Snippet Cards Styling */
-    .snippet-card {
-        width: 90%;
-        max-width: 600px;
-        background-color: var(--white);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid var(--accent-blue);
-        text-align: center;
-    }
-
-    .snippet-card img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        margin: 0 auto 15px auto;
-        border-radius: 5px;
-    }
-
-    .snippet-card h3 {
-        margin: 0 0 10px 0;
-        color: var(--text-color);
-        font-size: 18px;
-    }
-
-    .snippet-card p {
-        margin: 0 0 10px 0;
-        font-size: 14px;
-        color: #555;
-    }
-
-    .snippet-card a {
-        color: var(--accent-blue);
-        font-size: 14px;
-        text-decoration: none;
-    }
-
-    .snippet-card a:hover {
-        text-decoration: underline;
-    }
+  .snippet-card img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+  }
 }
