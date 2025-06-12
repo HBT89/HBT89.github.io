@@ -91,7 +91,8 @@ a {
 
 .vertical-line {
   width: 2px;
-  background-color: var(--rusted-copper);
+  background-color: var(--asphalt-purple);
+  background: radial-gradient(circle, var(--asphalt-purple) 30%, var(--dark-concrete) 100%);
   height: 80%;
   align-self: center;
   border-radius: 1px;
@@ -118,10 +119,10 @@ a {
 
 .section {
   background-color: #222;
-
+  background-image: url(img/triangles.png);
   width: 100%;
   padding: 20px;
-  border: 1px solid var(--digital-green);
+  border: 1px solid color-mix(in srgb, var(--digital-green) 40%, transparent);
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -130,7 +131,13 @@ a {
 
 .section:hover {
   border-color: var(--digital-green);
-  background: linear-gradient(to right, #1A1A1A, #333);
+  background: linear-gradient(135deg, transparent 0%, #1A1A1A 10%, #333 30%, transparent 50%);
+}
+.section:hover .title-wrapper h2 {
+	color : var(--digital-green);
+}
+.section:hover .vertical-line2 {
+  background: radial-gradient(circle, var(--digital-green) 20%, transparent 80%);
 }
 
 .section .content {
@@ -140,16 +147,28 @@ a {
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
+.hidden-input:checked+.section {
+  border-color: var(--digital-green);
+}
+
 .hidden-input:checked+.section .content {
   max-height: 500px;
   opacity: 1;
   padding-top: 15px;
 }
 
+.hidden-input:checked+.section .title-wrapper h2 {
+  color: var(--digital-green);
+}
+
+.hidden-input:checked+.section .vertical-line2 {
+  background: radial-gradient(circle, var(--digital-green) 20%, transparent 80%);
+}
+
 .title-wrapper {
   display: flex;
   align-items: center;
-  width: 33%;
+  width: 25%;
   min-width: 400px;
   max-width: 450px;
   white-space: nowrap;
@@ -158,7 +177,7 @@ a {
 .title-wrapper h2 {
   margin-left: 10px;
   font-family: 'Orbitron', sans-serif;
-  color: var(--digital-green);
+  color: var(--text-color);
 }
 
 .image-title {
@@ -176,7 +195,7 @@ a {
 
 .vertical-line2 {
   width: 2px;
-  background-color: var(--asphalt-purple);
+  background-color: var(--dark-concrete);
   height: 150px;
   margin: 0 20px;
 }
