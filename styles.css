@@ -94,7 +94,7 @@ a {
 
 
 .vertical-line {
-    width: 6px;
+    width: 2px; /* Aligned with .vertical-line2 for consistency */
     background-color: var(--copper-gold);
     height: 80%;
     align-self: center;
@@ -112,7 +112,7 @@ a {
     align-items: center;
     position: relative;
     overflow-y: auto;
-    max-height: 100vh;
+    height: auto;
 }
 
 /* Accordion Sections */
@@ -194,6 +194,7 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    will-change: transform, box-shadow;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid var(--accent-blue);
@@ -234,19 +235,20 @@ a {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.five-spacer {
+.spacer-small {
     min-height: 5px;
     max-height: 5px;
     width: 100%;
 }
 
-.ten-spacer {
+.spacer-medium {
     min-height: 10px;
     max-height: 10px;
     width: 100%;
 }
-
+/* Responsive styles for mobile devices */
 /* Mobile Styling */
+@media screen and (max-width: 768px) {
 @media screen and (max-width: 768px) {
 
 
