@@ -1,4 +1,4 @@
-/* Updated Cyberpunk Theme Colors */
+
 :root {
   --asphalt-purple: #4B3869;
   --digital-green: #66FF99;
@@ -9,7 +9,7 @@
   --text-color: #ccc;
 }
 
-/* Global Styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,7 +23,6 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
 .neon-green a:visited {
   color: var(--rusted-copper);
 }
@@ -273,7 +272,7 @@ a {
 
   .section {
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     padding: 30px;
   }
 
@@ -282,15 +281,33 @@ a {
     text-align: center;
   }
 
+  .image-title {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .title-wrapper {
     flex-direction: column;
-    max-width: 250px;
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    text-align: center;
   }
 
   .stock-image {
     width: 80%;
     max-width: 300px;
     margin-bottom: 15px;
+  }
+
+  .vertical-line2 {
+    display: none;
+  }
+
+  .short-description {
+    margin-top: 10px;
+    text-align: center;
+    padding: 0 10px;
   }
 
   .snippet-card {
