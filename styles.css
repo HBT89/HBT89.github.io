@@ -1,4 +1,3 @@
-
 :root {
   --asphalt-purple: #4B3869;
   --digital-green: #66FF99;
@@ -23,6 +22,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .neon-green a:visited {
   color: var(--rusted-copper);
 }
@@ -132,9 +132,11 @@ a {
   border-color: var(--digital-green);
   background: linear-gradient(135deg, transparent 0%, #1A1A1A 10%, #333 30%, transparent 50%);
 }
+
 .section:hover .title-wrapper h2 {
-	color : var(--digital-green);
+  color: var(--digital-green);
 }
+
 .section:hover .vertical-line2 {
   background: radial-gradient(circle, var(--digital-green) 20%, transparent 80%);
 }
